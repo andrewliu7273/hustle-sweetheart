@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hustle Sweetheart</title>
+    <meta name="description" content="A tiny baby-pink page for Adri's anniversary voice note.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="player-card" aria-labelledby="pageTitle">
+        <div class="heart-mark" aria-hidden="true"></div>
+        <p class="eyebrow">for adri</p>
+        <h1 id="pageTitle">Hustle Sweetheart</h1>
+        <p class="message">
+          A little voice note, saved here for whenever you want to hear it again.
+        </p>
+
+        <audio id="voicePlayer" preload="metadata" src="media/voice-recording.mp3"></audio>
+
+        <div class="controls" aria-label="Voice note player">
+          <div class="button-row">
+            <button class="control-button primary" id="playPauseButton" type="button">
+              Play
+            </button>
+            <button class="control-button" id="stopButton" type="button">
+              Stop
+            </button>
+          </div>
+
+          <label class="progress-label" for="progressSlider">
+            <span id="currentTime">0:00</span>
+            <input
+              id="progressSlider"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="Voice note progress"
+            >
+            <span id="duration">0:00</span>
+          </label>
+
+          <p class="status" id="audioStatus">Voice recording file not added yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

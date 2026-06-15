@@ -1,0 +1,153 @@
+:root {
+  --pink-50: #fff8fb;
+  --pink-100: #ffeaf3;
+  --pink-200: #ffd3e4;
+  --pink-300: #f7aeca;
+  --pink-500: #d95786;
+  --ink: #38232d;
+  --muted: #8a6674;
+  --white: #fffefe;
+  --shadow: 0 24px 70px rgba(151, 70, 103, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(circle at 22px 22px, rgba(217, 87, 134, 0.08) 0 2px, transparent 3px),
+    linear-gradient(135deg, var(--pink-50), var(--pink-100));
+  background-size: 44px 44px, auto;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 28px;
+}
+
+.player-card {
+  width: min(100%, 520px);
+  padding: clamp(26px, 7vw, 48px);
+  border: 1px solid rgba(217, 87, 134, 0.2);
+  border-radius: 28px;
+  background: rgba(255, 254, 254, 0.78);
+  box-shadow: var(--shadow);
+  text-align: center;
+  backdrop-filter: blur(18px);
+}
+
+.heart-mark {
+  width: 62px;
+  height: 56px;
+  margin: 0 auto 18px;
+  background: var(--pink-500);
+  clip-path: polygon(50% 100%, 10% 60%, 3% 36%, 10% 13%, 32% 4%, 50% 20%, 68% 4%, 90% 13%, 97% 36%, 90% 60%);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--pink-500);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 10vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.message {
+  margin: 18px auto 0;
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.55;
+}
+
+.controls {
+  margin-top: 30px;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.control-button {
+  min-height: 48px;
+  border: 1px solid rgba(217, 87, 134, 0.26);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.control-button.primary {
+  color: var(--white);
+  border-color: var(--pink-500);
+  background: var(--pink-500);
+}
+
+.control-button:focus-visible,
+#progressSlider:focus-visible {
+  outline: 3px solid rgba(217, 87, 134, 0.28);
+  outline-offset: 3px;
+}
+
+.progress-label {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+#progressSlider {
+  width: 100%;
+  accent-color: var(--pink-500);
+  cursor: pointer;
+}
+
+.status {
+  min-height: 22px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 750;
+}
+
+.status[data-ready="true"] {
+  color: var(--pink-500);
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 18px;
+  }
+
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+}
