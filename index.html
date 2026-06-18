@@ -14,37 +14,59 @@
         <p class="eyebrow">for adri</p>
         <h1 id="pageTitle">Hustle Sweetheart</h1>
         <p class="message">
-          A little voice note, saved here for whenever you want to hear it again.
+          A little voice note, saved here for the person who knows the answers.
         </p>
 
-        <audio id="voicePlayer" preload="metadata" src="voice-recording.mp3"></audio>
-
-        <div class="controls" aria-label="Voice note player">
-          <div class="button-row">
-            <button class="control-button primary" id="playPauseButton" type="button">
-              Play
-            </button>
-            <button class="control-button" id="stopButton" type="button">
-              Stop
-            </button>
-          </div>
-
-          <label class="progress-label" for="progressSlider">
-            <span id="currentTime">0:00</span>
+        <section class="quiz-panel" id="quizPanel" aria-labelledby="quizTitle">
+          <p class="quiz-count" id="quizCount">Question 1 of 5</p>
+          <h2 id="quizTitle">Unlock the note</h2>
+          <p class="quiz-question" id="quizQuestion"></p>
+          <p class="answer-blanks" id="answerBlanks" aria-hidden="true"></p>
+          <form class="answer-form" id="answerForm">
+            <label class="answer-label" for="answerInput">Your answer</label>
             <input
-              id="progressSlider"
-              type="range"
-              min="0"
-              max="100"
-              value="0"
-              step="0.1"
-              aria-label="Voice note progress"
+              id="answerInput"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              required
             >
-            <span id="duration">0:00</span>
-          </label>
+            <button class="control-button primary" type="submit">Check</button>
+          </form>
+          <p class="quiz-feedback" id="quizFeedback" role="status"></p>
+        </section>
 
-          <p class="status" id="audioStatus">Voice recording file not added yet.</p>
-        </div>
+        <section class="unlocked-panel" id="unlockedPanel" hidden>
+          <p class="unlock-message">That is correct. The note is yours.</p>
+          <audio id="voicePlayer" preload="metadata"></audio>
+
+          <div class="controls" aria-label="Voice note player">
+            <div class="button-row">
+              <button class="control-button primary" id="playPauseButton" type="button">
+                Play
+              </button>
+              <button class="control-button" id="stopButton" type="button">
+                Stop
+              </button>
+            </div>
+
+            <label class="progress-label" for="progressSlider">
+              <span id="currentTime">0:00</span>
+              <input
+                id="progressSlider"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Voice note progress"
+              >
+              <span id="duration">0:00</span>
+            </label>
+
+            <p class="status" id="audioStatus">Voice recording file not added yet.</p>
+          </div>
+        </section>
       </section>
     </main>
 

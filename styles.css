@@ -84,6 +84,86 @@ h1 {
   margin-top: 30px;
 }
 
+.quiz-panel {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(217, 87, 134, 0.18);
+}
+
+.quiz-count,
+.quiz-feedback,
+.unlock-message {
+  margin: 0;
+  color: var(--pink-500);
+  font-size: 0.94rem;
+  font-weight: 850;
+}
+
+.quiz-panel h2 {
+  margin: 8px 0 0;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.quiz-question {
+  margin: 16px auto 0;
+  max-width: 400px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.answer-blanks {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  margin: 18px 0 0;
+}
+
+.answer-blanks span {
+  display: inline-block;
+  width: 20px;
+  height: 28px;
+  border-bottom: 3px solid var(--pink-500);
+}
+
+.answer-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.answer-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+#answerInput {
+  min-height: 48px;
+  min-width: 0;
+  padding: 0 16px;
+  border: 1px solid rgba(217, 87, 134, 0.26);
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--white);
+  text-align: center;
+  font-weight: 800;
+}
+
+.quiz-feedback {
+  min-height: 24px;
+  margin-top: 14px;
+}
+
+.unlocked-panel {
+  margin-top: 28px;
+}
+
 .button-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -107,7 +187,8 @@ h1 {
 }
 
 .control-button:focus-visible,
-#progressSlider:focus-visible {
+#progressSlider:focus-visible,
+#answerInput:focus-visible {
   outline: 3px solid rgba(217, 87, 134, 0.28);
   outline-offset: 3px;
 }
@@ -148,6 +229,10 @@ h1 {
   }
 
   .button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .answer-form {
     grid-template-columns: 1fr;
   }
 }
